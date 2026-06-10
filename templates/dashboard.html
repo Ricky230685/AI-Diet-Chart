@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-success mb-4">
+        🥗 AI Diet Dashboard
+    </h2>
+    {% if profile %}
+    <div class="row">
+        <!-- User Profile -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow p-3">
+                <h4 class="text-primary">👤 Profile</h4>
+                <hr>
+                <p><strong>Name:</strong> {{ request.user.username }}</p>
+                <p><strong>Age:</strong> {{ profile.age }}</p>
+                <p><strong>Gender:</strong> {{ profile.gender }}</p>
+                <p><strong>Height:</strong> {{ profile.height }} cm</p>
+                <p><strong>Weight:</strong> {{ profile.weight }} kg</p>
+                <p><strong>Goal:</strong> {{ profile.goal }}</p>
+            </div>
+        </div>
+        <!-- BMI Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow p-3">
+                <h4 class="text-success">📊 Health Summary</h4>
+                <hr>
+                <p><strong>BMI:</strong> {{ bmi }}</p>
+                <p><strong>Category:</strong> {{ category }}</p>
+                <p><strong>Daily Calories:</strong> {{ calories }} kcal</p>
+            </div>
+        </div>
+    </div>
+    <!-- AI Diet Plan -->
+    <div class="card shadow p-4 mb-4">
+        <h3 class="text-success">
+            🤖 AI Generated Diet Plan
+        </h3>
+        <hr>
+        <pre style="white-space: pre-wrap;
+                    font-family: Arial;
+                    font-size:16px;">
+{{ diet_plan }}
+        </pre>
+    </div>
+    <!-- Water Intake -->
+    <div class="card shadow p-3 mb-4">
+        <h4>💧 Water Intake Recommendation</h4>
+        <hr>
+        <p>
+            Drink approximately
+            <strong>{{ profile.weight|floatformat:0 }} × 35 ml</strong>
+            of water daily.
+        </p>
+    </div>
+    <!-- Exercise -->
+    <div class="card shadow p-3 mb-4">
+        <h4>🏃 Exercise Recommendation</h4>
+        <hr>
+        {% if profile.goal == "Weight Loss" %}
+            <ul>
+                <li>30–45 min brisk walking</li>
+                <li>Jogging</li>
+                <li>Cycling</li>
+                <li>Light strength training</li>
+            </ul>
+        {% elif profile.goal == "Weight Gain" %}
+            <ul>
+                <li>Strength training</li>
+                <li>Compound exercises</li>
+                <li>Protein-rich diet</li>
+                <li>Proper sleep</li>
+            </ul>
+        {% else %}
+            <ul>
+                <li>Yoga</li>
+                <li>Walking</li>
+                <li>Stretching</li>
+                <li>Moderate exercise</li>
+            </ul>
+        {% endif %}
+    </div>
+    <!-- Download Button -->
+    <div class="text-center mb-5">
+        <a href="{% url 'download_pdf' %}"
+           class="btn btn-success btn-lg">
+            📄 Download Diet Plan PDF
+        </a>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        No profile found.
+        Please fill your profile first.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

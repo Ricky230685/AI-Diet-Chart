@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-success">Contact Us</h1>
+        <p class="lead">
+            We'd love to hear from you. Feel free to get in touch.
+        </p>
+    </div>
+
+    <div class="row">
+
+        <!-- Contact Form -->
+
+        <div class="col-md-7">
+
+            <div class="card shadow">
+                <div class="card-body p-4">
+
+                    <h3 class="mb-4">Send a Message</h3>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Enter your name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Enter your email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Enter subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control"
+                                      rows="5"
+                                      placeholder="Write your message"></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contact Info -->
+
+        <div class="col-md-5">
+
+            <div class="card shadow h-100">
+                <div class="card-body p-4">
+
+                    <h3 class="mb-4">Contact Information</h3>
+
+                    <p>
+                        📧 <strong>Email:</strong><br>
+                        support@aidietplanner.com
+                    </p>
+
+                    <p>
+                        📱 <strong>Phone:</strong><br>
+                        +91 XXXXX XXXXX
+                    </p>
+
+                    <p>
+                        📍 <strong>Address:</strong><br>
+                        Lucknow, Uttar Pradesh, India
+                    </p>
+
+                    <hr>
+
+                    <h5>Working Hours</h5>
+
+                    <p>
+                        Monday - Friday: 9:00 AM - 6:00 PM
+                    </p>
+
+                    <p>
+                        Saturday: 10:00 AM - 4:00 PM
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

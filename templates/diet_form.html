@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1>Welcome, {{ user.username }} 👋</h1>
+        <p class="lead">
+            Manage your diet plans and track your health journey.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Generate Diet Plan -->
+
+        <div class="col-md-4">
+            <div class="card shadow h-100">
+                <div class="card-body text-center">
+
+                    <h2>🥗</h2>
+
+                    <h4>Generate Diet Plan</h4>
+
+                    <p>
+                        Create a personalized diet chart based on your goals.
+                    </p>
+
+                    <a href="/diet-form/"
+                       class="btn btn-success">
+                        Start
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Diet History -->
+
+        <div class="col-md-4">
+            <div class="card shadow h-100">
+                <div class="card-body text-center">
+
+                    <h2>📋</h2>
+
+                    <h4>Diet History</h4>
+
+                    <p>
+                        View your previously generated diet plans.
+                    </p>
+
+                    <a href="#"
+                       class="btn btn-primary">
+                        View
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile -->
+
+        <div class="col-md-4">
+            <div class="card shadow h-100">
+                <div class="card-body text-center">
+
+                    <h2>👤</h2>
+
+                    <h4>Profile</h4>
+
+                    <p>
+                        Manage your account information.
+                    </p>
+
+                    <a href="#"
+                       class="btn btn-warning">
+                        Profile
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

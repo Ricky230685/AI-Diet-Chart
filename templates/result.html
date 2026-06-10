@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Diet Result
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h1 class="text-center text-success">
+            Your Diet Report
+        </h1>
+
+        <hr>
+
+        <h3>BMI Score</h3>
+
+        <h2 class="text-primary">
+            {{ bmi }}
+        </h2>
+
+        <h4>
+            Category: {{ category }}
+        </h4>
+
+        <hr>
+
+        <h3>
+            Goal: {{ goal }}
+        </h3>
+
+        <hr>
+
+        <h3>Recommended Diet Plan</h3>
+
+        <ul class="list-group mt-3">
+
+            {% for item in diet_plan %}
+
+            <li class="list-group-item">
+                {{ item }}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+        <div class="text-center mt-4">
+
+            <a href="/diet-form/"
+               class="btn btn-success">
+                Generate Another Plan
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
